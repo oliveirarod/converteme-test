@@ -1,5 +1,10 @@
+// Hooks
 import { useState } from "react";
+
+// Styles
 import { Circles, Connections, StepperContainer } from "./StepperStyle";
+
+// Models
 import { Step } from "../../models/Step";
 
 type Props = {

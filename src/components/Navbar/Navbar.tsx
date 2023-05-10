@@ -1,8 +1,9 @@
+// Styles
 import { NavbarContainer } from "./NavbarStyle";
 
+// Icons/Images
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBell, faCircleQuestion } from '@fortawesome/free-solid-svg-icons';
-
 import profileImage from '../../assets/mock-profile-image.jpg';
 
 const Navbar = () => {

@@ -1,10 +1,12 @@
+// Models
 import { Menu } from "../../models/Menu";
+
+// Styles
 import { SidebarContainer } from "./SidebarStyle";
 
 // Icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleRight, faPen } from "@fortawesome/free-solid-svg-icons";
-
 import menuIcon from "../../assets/icons/menu-icon.svg";
 import dashboardIcon from "../../assets/icons/dashboard-icon.svg";
 import shoppingCartIcon from "../../assets/icons/shopping-cart-icon.svg";

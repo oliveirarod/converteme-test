@@ -1,4 +1,5 @@
 // Components
+import PageContent from "../components/PageContent/PageContent";
 import Stepper from "../components/Stepper/Stepper";
 
 // Models
@@ -17,7 +18,9 @@ const Charges = () => {
 
   return (
     <ChargeContainer>
-      <Stepper steps={steps} />
+      <PageContent pageName="Cobrança">
+        <Stepper steps={steps} />
+      </PageContent>
     </ChargeContainer>
   );
 };
