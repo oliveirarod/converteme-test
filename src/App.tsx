@@ -4,15 +4,20 @@ import GlobalStyles from "./GlobalStyles";
 
 // Components
 import Navbar from "./components/Navbar/Navbar";
+import Sidebar from "./components/Sidebar/Sidebar";
 import Charges from "./pages/Charges";
 
 function App() {
   return (
-    <div className="App">
+    <>
       <GlobalStyles />
       <Navbar />
-      <Charges />
-    </div>
+
+      <div className="page-content">
+        <Sidebar />
+        <Charges />
+      </div>
+    </>
   );
 }
 

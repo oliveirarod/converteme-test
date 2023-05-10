@@ -18,6 +18,8 @@ export const Circles = styled.div`
 			border-radius: 50%;
 			border: 1.5px solid var(--grey-color);
 			background: var(--white);
+			z-index: 1;
+			cursor: pointer;
 	
 			.number {
 				color: var(--grey-color);
@@ -57,7 +59,6 @@ export const Connections = styled.div`
   position: absolute;
   left: 3.5rem;
   top: 1.125rem;
-  z-index: -1;
 
   .connection {
 		width: 33%;

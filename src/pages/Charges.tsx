@@ -4,6 +4,9 @@ import Stepper from "../components/Stepper/Stepper";
 // Models
 import { Step } from "../models/Step";
 
+// Styles
+import { ChargeContainer } from "./ChargesStyle";
+
 const Charges = () => {
   const steps: Step[] = [
     { label: "Dados da cobrança" },
@@ -13,9 +16,9 @@ const Charges = () => {
   ];
 
   return (
-    <div>
+    <ChargeContainer>
       <Stepper steps={steps} />
-    </div>
+    </ChargeContainer>
   );
 };
 

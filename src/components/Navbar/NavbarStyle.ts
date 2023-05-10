@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 export const NavbarContainer = styled.nav`
-  padding: 0.75rem;
+  padding: 0 0.75rem;
+  height: 65px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -14,7 +15,7 @@ export const NavbarContainer = styled.nav`
   }
 
   .icons span {
-    margin-left: 1rem;
+    margin-left: 1.25rem;
     font-size: 0.95rem;
     cursor: pointer;
 
