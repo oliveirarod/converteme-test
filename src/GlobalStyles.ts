@@ -4,12 +4,13 @@ const GlobalStyles = createGlobalStyle`
 	:root {
 		--primary-color: #004BFF;
 		--grey-color: #696969;
+		--light-grey-color: #B4B4B4;
 		--white: #FFFFFF;
 
 		--default-transition: 0.25s;
 	}
 
-  body, button {
+  body, button, input, textarea {
     font-family: 'Inter', sans-serif;
   }
 
