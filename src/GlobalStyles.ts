@@ -5,6 +5,8 @@ const GlobalStyles = createGlobalStyle`
 		--primary-color: #004BFF;
 		--grey-color: #696969;
 		--white: #FFFFFF;
+
+		--default-transition: 0.25s;
 	}
 
   body, button {

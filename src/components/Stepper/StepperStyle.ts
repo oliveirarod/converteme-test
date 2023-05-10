@@ -8,48 +8,49 @@ export const Circles = styled.div`
   display: flex;
   justify-content: space-between;
 
-	.stepper {
-		flex-direction: column;
-		justify-content: space-between;
+  .stepper {
+    flex-direction: column;
+    justify-content: space-between;
 
-		.circle {
-			width: 2.25rem;
-			height: 2.25rem;
-			border-radius: 50%;
-			border: 1.5px solid var(--grey-color);
-			background: var(--white);
-			z-index: 1;
-			cursor: pointer;
-	
-			.number {
-				color: var(--grey-color);
-				font-size: 1.125rem;
-				font-weight: bold;
-			}
-	
-			&.active {
-				border: 1.5px solid var(--primary-color);
-	
-				.number {
-					color: var(--primary-color);
-				}
-			}
-	
-			&.completed {
-				background: var(--primary-color);
-				border: 1.5px solid var(--primary-color);
-	
-				.number {
-					color: var(--white);
-				}
-			}
-		}
+    .circle {
+      width: 2.25rem;
+      height: 2.25rem;
+      border-radius: 50%;
+      border: 1.5px solid var(--grey-color);
+      background: var(--white);
+      z-index: 1;
+      transition: var(--default-transition);
+      cursor: pointer;
 
-		.label {
-			margin: 0.5rem auto auto;
-			color: var(--grey-color);
-		}
-	}
+      .number {
+        color: var(--grey-color);
+        font-size: 1.125rem;
+        font-weight: bold;
+      }
+
+      &.active {
+        border-color: var(--primary-color);
+
+        .number {
+          color: var(--primary-color);
+        }
+      }
+
+      &.completed {
+        background: var(--primary-color);
+        border-color: var(--primary-color);
+
+        .number {
+          color: var(--white);
+        }
+      }
+    }
+
+    .label {
+      margin: 0.5rem auto auto;
+      color: var(--grey-color);
+    }
+  }
 `;
 
 export const Connections = styled.div`
@@ -61,7 +62,7 @@ export const Connections = styled.div`
   top: 1.125rem;
 
   .connection {
-		width: 33%;
+    width: 33%;
     height: 2px;
     background: var(--grey-color);
 

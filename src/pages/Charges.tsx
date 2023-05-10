@@ -1,4 +1,5 @@
 // Components
+import ChargeForm from "../components/Forms/ChargeForm/ChargeForm";
 import PageContent from "../components/PageContent/PageContent";
 import Stepper from "../components/Stepper/Stepper";
 
@@ -19,7 +20,10 @@ const Charges = () => {
   return (
     <ChargeContainer>
       <PageContent pageName="Cobrança">
-        <Stepper steps={steps} />
+        <div className="stepper-container">
+          <Stepper steps={steps} />
+        </div>
+        <ChargeForm />
       </PageContent>
     </ChargeContainer>
   );
