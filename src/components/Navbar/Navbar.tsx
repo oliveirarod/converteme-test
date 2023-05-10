@@ -1,19 +1,26 @@
 import { NavbarContainer } from "./NavbarStyle";
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBell, faCircleQuestion } from '@fortawesome/free-solid-svg-icons';
+
+import profileImage from '../../assets/mock-profile-image.jpg';
+
 const Navbar = () => {
   return (
     <NavbarContainer>
       <span className="logo">converte.me</span>
 
-      <div className="icons">
+      <div className="icons flex-center">
         <span>
-          <i className="fa fa-bell"></i>
+					<FontAwesomeIcon icon={faBell} />
         </span>
+
         <span>
-          <i className="fa fa-info"></i>
+					<FontAwesomeIcon icon={faCircleQuestion} />
         </span>
+
         <span>
-          <img src="profile.jpg" alt="Profile" />
+          <img src={profileImage} alt="Profile" />
         </span>
       </div>
     </NavbarContainer>
