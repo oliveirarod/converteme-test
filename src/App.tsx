@@ -1,9 +1,17 @@
+// Styles
 import "./App.css";
+import GlobalStyles from "./GlobalStyles";
+
+// Components
+import Navbar from "./components/Navbar/Navbar";
+import Charges from "./pages/Charges";
 
 function App() {
   return (
     <div className="App">
-      <h1>Hello World!</h1>
+      <GlobalStyles />
+      <Navbar />
+      <Charges />
     </div>
   );
 }

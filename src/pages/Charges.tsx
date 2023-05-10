@@ -1,9 +1,22 @@
-const Charges = () => {
-	return (
-		<div>
-			<h1>Cobrança</h1>
-		</div>
-	)
-}
+// Components
+import Stepper from "../components/Stepper/Stepper";
 
-export default Charges
+// Models
+import { Step } from "../models/Step";
+
+const Charges = () => {
+  const steps: Step[] = [
+    { label: "Dados da cobrança" },
+    { label: "Juros e Multa" },
+    { label: "Dados do cliente" },
+    { label: "Resumo" },
+  ];
+
+  return (
+    <div>
+      <Stepper steps={steps} />
+    </div>
+  );
+};
+
+export default Charges;
