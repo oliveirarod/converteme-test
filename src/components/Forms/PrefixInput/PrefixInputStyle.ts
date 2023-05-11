@@ -30,6 +30,7 @@ export const InputContainer = styled.div`
 			border-left: none;
 			padding-left: 0.5rem;
 			color: var(--grey-color);
+      width: calc(25% - 2.125rem);
       transition: var(--default-transition);
 
       &:focus {

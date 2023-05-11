@@ -6,6 +6,7 @@ const GlobalStyles = createGlobalStyle`
 		--grey-color: #696969;
 		--light-grey-color: #B4B4B4;
 		--white: #FFFFFF;
+		--black: #000000;
 
 		--default-transition: 0.25s;
 	}

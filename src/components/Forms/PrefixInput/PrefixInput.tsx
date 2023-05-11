@@ -1,15 +1,11 @@
-import { useState } from "react";
 import { InputContainer } from "./PrefixInputStyle";
 import { NumericFormat } from "react-number-format";
 
 type PrefixInputProps = {
-  value: number;
   setValue: (value: number) => void;
 };
 
-const PrefixInput = ({ value, setValue }: PrefixInputProps) => {
-  const [isFocused, setIsFocused] = useState(false);
-
+const PrefixInput = ({ setValue }: PrefixInputProps) => {
   return (
     <InputContainer>
       <span className="input-label">Valor da cobrança</span>
@@ -30,8 +26,6 @@ const PrefixInput = ({ value, setValue }: PrefixInputProps) => {
           onValueChange={(values) => {
             setValue(values.floatValue || 0);
           }}
-          onFocus={() => setIsFocused(true)}
-          onBlur={() => setIsFocused(false)}
         />
       </div>
     </InputContainer>
