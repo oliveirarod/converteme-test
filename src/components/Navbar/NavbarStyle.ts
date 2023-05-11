@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const NavbarContainer = styled.nav`
+export const Container = styled.nav`
   padding: 0 0.75rem;
   width: calc(100vw - 1.5rem);
   height: 65px;

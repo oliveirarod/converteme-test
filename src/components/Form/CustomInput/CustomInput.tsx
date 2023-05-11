@@ -1,4 +1,4 @@
-import { CustomInputContainer } from "./CustomInputStyle";
+import { Container } from "./CustomInputStyle";
 
 type CustomInputProps = {
   label: string;
@@ -21,7 +21,7 @@ const CustomInput = ({ label, value, setValue }: CustomInputProps) => {
   };
 
   return (
-    <CustomInputContainer>
+    <Container>
       <span className="input-label">{label}</span>
 
       <input
@@ -30,7 +30,7 @@ const CustomInput = ({ label, value, setValue }: CustomInputProps) => {
         max={handleDate(false, 10)}
         className="custom-form-control-field"
       />
-    </CustomInputContainer>
+    </Container>
   );
 };
 

@@ -2,7 +2,7 @@
 import { useState } from "react";
 
 // Styles
-import { ChargeFormContainer } from "./ChargeFormStyle";
+import { Container } from "./ChargeFormStyle";
 
 // Components
 import CustomInput from "../PrefixInput/PrefixInput";
@@ -19,7 +19,7 @@ const ChargeForm = () => {
   const [isSignatureSelected, setIsSignatureSelected] = useState(false);
 
   return (
-    <ChargeFormContainer>
+    <Container>
       <FormBlock title="O que cobrar?">
         <CustomInput setValue={setChargeValue} />
 
@@ -47,7 +47,7 @@ const ChargeForm = () => {
       <FormBlock title="Qual será a forma de pagamento?">
         <PaymentMethods />
       </FormBlock>
-    </ChargeFormContainer>
+    </Container>
   );
 };
 

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const ChargeContainer = styled.div`
+export const Container = styled.div`
   width: 100%;
   padding: 3rem 5rem 4rem;
   display: flex;

@@ -1,4 +1,4 @@
-import { InputContainer } from "./PrefixInputStyle";
+import { Container } from "./PrefixInputStyle";
 import { NumericFormat } from "react-number-format";
 
 type PrefixInputProps = {
@@ -7,7 +7,7 @@ type PrefixInputProps = {
 
 const PrefixInput = ({ setValue }: PrefixInputProps) => {
   return (
-    <InputContainer>
+    <Container>
       <span className="input-label">Valor da cobrança</span>
 
       <div className="input-with-prefix">
@@ -28,7 +28,7 @@ const PrefixInput = ({ setValue }: PrefixInputProps) => {
           }}
         />
       </div>
-    </InputContainer>
+    </Container>
   );
 };
 

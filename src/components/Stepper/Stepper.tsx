@@ -1,5 +1,5 @@
 // Styles
-import { Circles, Connections, StepperContainer } from "./StepperStyle";
+import { Circles, Connections, Container } from "./StepperStyle";
 
 // Models
 import { Step } from "../../models/Step";
@@ -58,10 +58,10 @@ function Stepper({ steps }: Props) {
   });
 
   return (
-    <StepperContainer>
+    <Container>
       <Circles>{circles}</Circles>
       <Connections>{connections}</Connections>
-    </StepperContainer>
+    </Container>
   );
 }
 

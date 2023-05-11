@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const CustomSwitchContainer = styled.div`
+export const Container = styled.div`
   display: flex;
   width: 50%;
 	border: 1px solid var(--grey-color);

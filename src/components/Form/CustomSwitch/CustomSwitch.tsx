@@ -1,4 +1,4 @@
-import { CustomSwitchContainer } from "./CustomSwitchStyle";
+import { Container } from "./CustomSwitchStyle";
 
 type CustomSwitchProps = {
   value: boolean;
@@ -7,7 +7,7 @@ type CustomSwitchProps = {
 
 const CustomSwitch = ({ value, setValue }: CustomSwitchProps) => {
   return (
-    <CustomSwitchContainer>
+    <Container>
       <div
         className={`
 					flex-center 
@@ -27,7 +27,7 @@ const CustomSwitch = ({ value, setValue }: CustomSwitchProps) => {
       >
         <span>Assinatura</span>
       </div>
-    </CustomSwitchContainer>
+    </Container>
   );
 };
 

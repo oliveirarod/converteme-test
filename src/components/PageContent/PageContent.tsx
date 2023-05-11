@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
 // Styles
-import { PageContainer } from "./PageContentStyle";
+import { Container } from "./PageContentStyle";
 
 interface PageContentProps {
   children: ReactNode;
@@ -14,7 +14,7 @@ interface PageContentProps {
 
 const PageContent = ({ children, pageName }: PageContentProps) => {
   return (
-    <PageContainer>
+    <Container>
       <div className="return-button">
         <FontAwesomeIcon icon={faArrowLeft} />
         <span>VOLTAR</span>
@@ -25,7 +25,7 @@ const PageContent = ({ children, pageName }: PageContentProps) => {
       </div>
 
       <div className="page-content-bg">{children}</div>
-    </PageContainer>
+    </Container>
   );
 };
 

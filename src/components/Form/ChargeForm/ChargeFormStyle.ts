@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const ChargeFormContainer = styled.div`
+export const Container = styled.div`
 	.payment-info-text {
 		font-size: 0.875rem;
 		color: var(--grey-color);

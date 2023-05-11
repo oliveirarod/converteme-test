@@ -1,5 +1,5 @@
 // Styles
-import { NavbarContainer } from "./NavbarStyle";
+import { Container } from "./NavbarStyle";
 
 // Icons/Images
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -8,7 +8,7 @@ import profileImage from '../../assets/mock-profile-image.jpg';
 
 const Navbar = () => {
   return (
-    <NavbarContainer>
+    <Container>
       <span className="logo">converte.me</span>
 
       <div className="icons flex-center">
@@ -24,7 +24,7 @@ const Navbar = () => {
           <img src={profileImage} alt="Profile" />
         </span>
       </div>
-    </NavbarContainer>
+    </Container>
   );
 };
 

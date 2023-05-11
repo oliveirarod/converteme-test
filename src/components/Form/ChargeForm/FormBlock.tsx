@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { FormBlockContainer } from "./FormBlockStyle";
+import { Container } from "./FormBlockStyle";
 
 interface FormBlocksProps {
   children: ReactNode;
@@ -8,11 +8,11 @@ interface FormBlocksProps {
 
 const FormBlock = ({ children, title }: FormBlocksProps) => {
   return (
-    <FormBlockContainer>
+    <Container>
       <div className="dark-form-text">{title}</div>
 
       {children}
-    </FormBlockContainer>
+    </Container>
   );
 };
 

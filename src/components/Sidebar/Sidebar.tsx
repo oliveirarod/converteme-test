@@ -2,7 +2,7 @@
 import { Menu } from "../../models/Menu";
 
 // Styles
-import { SidebarContainer } from "./SidebarStyle";
+import { Container } from "./SidebarStyle";
 
 // Icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -40,7 +40,7 @@ const Sidebar = () => {
     );
 
   return (
-    <SidebarContainer>
+    <Container>
       <div className="menu">
         <img src={menuIcon} alt="Menu" />
       </div>
@@ -62,7 +62,7 @@ const Sidebar = () => {
           </div>
         );
       })}
-    </SidebarContainer>
+    </Container>
   );
 };
 

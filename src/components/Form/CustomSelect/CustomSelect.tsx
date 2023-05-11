@@ -2,7 +2,7 @@
 import { SelectOption } from "../../../models/SelectOption";
 
 // Styles
-import { CustomSelectContainer } from "./CustomSelectStyle";
+import { Container } from "./CustomSelectStyle";
 
 import Select from "react-select";
 
@@ -51,7 +51,7 @@ const CustomSelect = ({ options, value, label, setValue }: SelectProps) => {
   };
 
   return (
-    <CustomSelectContainer>
+    <Container>
       <span className="input-label">
         {label.text}
         {label.optional ? <span className="optional"> (Opcional)</span> : ""}
@@ -63,7 +63,7 @@ const CustomSelect = ({ options, value, label, setValue }: SelectProps) => {
         styles={CustomSelectStyles}
         onChange={handleChange}
       />
-    </CustomSelectContainer>
+    </Container>
   );
 };
 

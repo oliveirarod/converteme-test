@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const FormBlockContainer = styled.div`
+export const Container = styled.div`
   .dark-form-text {
     color: var(--black);
     font-size: 0.875rem;

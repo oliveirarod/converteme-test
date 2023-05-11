@@ -1,4 +1,4 @@
-import { TextAreaContainer } from "./CustomTextAreaStyle";
+import { Container } from "./CustomTextAreaStyle";
 
 type CostumTextAreaProps = {
   value: string;
@@ -12,7 +12,7 @@ const CostumTextArea = ({
   setValue,
 }: CostumTextAreaProps) => {
   return (
-    <TextAreaContainer>
+    <Container>
       <label htmlFor="chargeDesc">
         Descrição da cobrança
         <span className="light-text"> (Opcional)</span>
@@ -27,7 +27,7 @@ const CostumTextArea = ({
         onChange={(e) => setValue(e.target.value)}
         rows={6}
       />
-    </TextAreaContainer>
+    </Container>
   );
 };
 

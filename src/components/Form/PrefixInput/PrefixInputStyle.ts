@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const InputContainer = styled.div`
+export const Container = styled.div`
   .input-label {
     color: var(--grey-color);
     font-size: 0.75rem;

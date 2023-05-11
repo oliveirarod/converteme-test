@@ -2,7 +2,7 @@
 import { useStepperContext } from "../context/StepperContext";
 
 // Components
-import ChargeForm from "../components/Forms/ChargeForm/ChargeForm";
+import ChargeForm from "../components/Form/ChargeForm/ChargeForm";
 import PageContent from "../components/PageContent/PageContent";
 import Stepper from "../components/Stepper/Stepper";
 
@@ -10,7 +10,8 @@ import Stepper from "../components/Stepper/Stepper";
 import { Step } from "../models/Step";
 
 // Styles
-import { ChargeContainer, OutOfScopeMessage } from "./ChargesStyle";
+import { Container, OutOfScopeMessage } from "./ChargesStyle";
+import StepperControls from "../components/Stepper/StepperControls";
 
 const Charges = () => {
   const steps: Step[] = [
@@ -32,15 +33,17 @@ const Charges = () => {
     );
 
   return (
-    <ChargeContainer>
+    <Container>
       <PageContent pageName="Cobrança">
         <div className="stepper-container">
           <Stepper steps={steps} />
         </div>
 
         {handleStepContent()}
+
+        <StepperControls />
       </PageContent>
-    </ChargeContainer>
+    </Container>
   );
 };
 
