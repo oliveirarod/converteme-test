@@ -16,8 +16,6 @@ const ChargeForm = () => {
   const [description, setDescription] = useState("");
   const [isSignatureSelected, setIsSignatureSelected] = useState(false);
 
-  console.log(chargeValue);
-
   return (
     <ChargeFormContainer>
       <div className="dark-form-text">O que cobrar?</div>

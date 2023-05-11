@@ -4,12 +4,17 @@ import { SelectOption } from "../../../models/SelectOption";
 // Styles
 import { CustomSelectContainer } from "./CustomSelectStyle";
 
-import Select from 'react-select';
+import Select from "react-select";
+
+type LabelType = {
+  text: string;
+  optional?: boolean;
+};
 
 type SelectProps = {
   options: SelectOption[];
   value: SelectOption;
-  label: string;
+  label: LabelType;
   setValue: (value: SelectOption) => void;
 };
 
@@ -20,7 +25,7 @@ const CustomSelectStyles = {
     borderRadius: "0.5rem",
     fontSize: "0.75rem",
     boxShadow: isFocused ? "none" : "var(--primary-color)",
-    cursor: "pointer"
+    cursor: "pointer",
   }),
   singleValue: (provided: any) => ({
     ...provided,
@@ -28,23 +33,36 @@ const CustomSelectStyles = {
   }),
   option: (provided: any, { isFocused }: any) => ({
     ...provided,
-    backgroundColor: isFocused ? 'var(--primary-color)' : 'var(--white)',
-    color: isFocused ? 'var(--white)' : 'var(--grey-color)',
+    backgroundColor: isFocused ? "var(--primary-color)" : "var(--white)",
+    color: isFocused ? "var(--white)" : "var(--grey-color)",
     fontSize: "0.75rem",
-    cursor: "pointer"
+    cursor: "pointer",
   }),
   indicatorSeparator: (provided: any) => ({
     ...provided,
-    display: 'none',
+    display: "none",
   }),
 };
 
 const CustomSelect = ({ options, value, label, setValue }: SelectProps) => {
+  const handleChange = (newValue: any, actionMeta: any) => {
+    const selectedOption = newValue as SelectOption;
+    setValue(selectedOption);
+  };
+
   return (
     <CustomSelectContainer>
-      <span className="input-label">{label}</span>
+      <span className="input-label">
+        {label.text}
+        {label.optional ? <span className="optional"> (Opcional)</span> : ""}
+      </span>
 
-      <Select options={options} value={value} styles={CustomSelectStyles}/>
+      <Select
+        options={options}
+        value={value}
+        styles={CustomSelectStyles}
+        onChange={handleChange}
+      />
     </CustomSelectContainer>
   );
 };

@@ -2,8 +2,8 @@ import { CustomInputContainer } from "./CustomInputStyle";
 
 type CustomInputProps = {
   label: string;
-  value: string;
-  setValue: (value: string) => void;
+  value: Date;
+  setValue: (value: Date) => void;
 };
 
 const CustomInput = ({ label, value, setValue }: CustomInputProps) => {

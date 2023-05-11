@@ -14,8 +14,8 @@ import { Container } from "./InCashOptionStyle";
 const InCashOption = () => {
   const defaultInstallment = { label: "À vista (R$ 150,00)", value: "1" };
 
-  const [chargeDate, setChargeDate] = useState("");
   const [installment, setInstallment] = useState(defaultInstallment);
+  const [chargeDate, setChargeDate] = useState(new Date());
 
   const installmentOptions: SelectOption[] = [
     defaultInstallment,
@@ -28,11 +28,12 @@ const InCashOption = () => {
   return (
     <Container>
       <CustomSelect
-        label="Parcelamento"
+        label={{ text: "Parcelamento" }}
         value={installment}
         setValue={setInstallment}
         options={installmentOptions}
       />
+
       <CustomInput
         label="Vencimento da cobrança"
         value={chargeDate}

@@ -29,7 +29,7 @@ const GlobalStyles = createGlobalStyle`
 	}
 
 	.custom-form-control-field {
-    height: 2.125rem;
+    height: 100%;
     border: 1px solid var(--light-grey-color);
     border-radius: 0.5rem;
     padding: 0 0.5rem;
