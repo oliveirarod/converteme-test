@@ -28,7 +28,7 @@ const CustomInput = ({ label, value, setValue }: CustomInputProps) => {
         type="date"
         min={handleDate(true)}
         max={handleDate(false, 10)}
-        className="custom-input-field"
+        className="custom-form-control-field"
       />
     </CustomInputContainer>
   );

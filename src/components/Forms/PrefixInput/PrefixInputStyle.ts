@@ -31,6 +31,7 @@ export const InputContainer = styled.div`
 			padding-left: 0.5rem;
 			color: var(--grey-color);
       width: calc(25% - 2.125rem);
+      min-width: calc(200px - 2.125rem);
       transition: var(--default-transition);
 
       &:focus {

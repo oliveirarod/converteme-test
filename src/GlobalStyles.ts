@@ -20,6 +20,26 @@ const GlobalStyles = createGlobalStyle`
 		align-items: center;
 		justify-content: center;
 	}
+
+	.input-label {
+		color: var(--grey-color);
+		font-size: 0.75rem;
+		font-weight: 600;
+		margin-bottom: 0.375rem;
+	}
+
+	.custom-form-control-field {
+    height: 2.125rem;
+    border: 1px solid var(--light-grey-color);
+    border-radius: 0.5rem;
+    padding: 0 0.5rem;
+    color: var(--grey-color);
+		min-width: 200px;
+
+    &:focus {
+      outline: none;
+    }
+  }
 `;
 
 export default GlobalStyles;
