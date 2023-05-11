@@ -2,6 +2,9 @@
 import "./App.css";
 import GlobalStyles from "./GlobalStyles";
 
+// Contexts
+import { StepperContextProvider } from "./context/StepperContext";
+
 // Components
 import Navbar from "./components/Navbar/Navbar";
 import Sidebar from "./components/Sidebar/Sidebar";
@@ -15,7 +18,9 @@ function App() {
 
       <div className="page-content">
         <Sidebar />
-        <Charges />
+        <StepperContextProvider>
+          <Charges />
+        </StepperContextProvider>
       </div>
     </>
   );

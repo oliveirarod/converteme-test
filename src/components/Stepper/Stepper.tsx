@@ -7,12 +7,15 @@ import { Circles, Connections, StepperContainer } from "./StepperStyle";
 // Models
 import { Step } from "../../models/Step";
 
+// Contexts
+import { useStepperContext } from "../../context/StepperContext";
+
 type Props = {
   steps: Step[];
 };
 
 function Stepper({ steps }: Props) {
-  const [currentStep, setCurrentStep] = useState(0);
+  const { currentStep, setCurrentStep } = useStepperContext();
 
   const circles = steps.map((step, index) => {
     const isActive = index === currentStep;

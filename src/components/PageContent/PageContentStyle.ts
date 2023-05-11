@@ -9,6 +9,7 @@ export const PageContainer = styled.div`
 
 		span {
 			margin-left: 0.5rem;
+			font-weight: 500;
 		}
   }
 
