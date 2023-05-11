@@ -11,6 +11,7 @@ import CustomSwitch from "../CustomSwitch/CustomSwitch";
 import InCashOption from "../PaymentOptions/InCashOption";
 import SignatureOption from "../PaymentOptions/SignatureOption";
 import FormBlock from "./FormBlock";
+import PaymentMethods from "../PaymentMethods/PaymentMethods";
 
 const ChargeForm = () => {
   const [chargeValue, setChargeValue] = useState(0);
@@ -44,7 +45,7 @@ const ChargeForm = () => {
       {isSignatureSelected ? <SignatureOption /> : <InCashOption />}
 
       <FormBlock title="Qual será a forma de pagamento?">
-
+        <PaymentMethods />
       </FormBlock>
     </ChargeFormContainer>
   );

@@ -1,8 +1,13 @@
 import styled from "styled-components";
 
 export const SidebarContainer = styled.div`
+	position: fixed;
+	left: 0;
+	top: var(--navbar-height);
 	background: var(--white);
-	width: 300px;
+	width: var(--sidebar-width);
+	height: calc(100vh - var(--navbar-height));
+	z-index: 100;
 
 	.menu {
 		display: flex;

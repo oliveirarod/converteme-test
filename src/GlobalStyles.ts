@@ -9,6 +9,8 @@ const GlobalStyles = createGlobalStyle`
 		--black: #000000;
 
 		--default-transition: 0.25s;
+		--sidebar-width: 225px;
+		--navbar-height: 65px;
 	}
 
   body, button, input, textarea {

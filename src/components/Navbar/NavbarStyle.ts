@@ -2,12 +2,16 @@ import styled from "styled-components";
 
 export const NavbarContainer = styled.nav`
   padding: 0 0.75rem;
+  width: calc(100vw - 1.5rem);
   height: 65px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: var(--primary-color);
   color: var(--white);
+  position: fixed;
+  top: 0;
+  z-index: 100;
 
   .logo {
     font-size: 1.25rem;

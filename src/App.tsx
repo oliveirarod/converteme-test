@@ -18,6 +18,7 @@ function App() {
 
       <div className="page-content">
         <Sidebar />
+
         <StepperContextProvider>
           <Charges />
         </StepperContextProvider>
