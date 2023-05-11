@@ -10,6 +10,7 @@ import CostumTextArea from "../CustomTextArea/CostumTextArea";
 import CustomSwitch from "../CustomSwitch/CustomSwitch";
 import InCashOption from "../PaymentOptions/InCashOption";
 import SignatureOption from "../PaymentOptions/SignatureOption";
+import FormBlock from "./FormBlock";
 
 const ChargeForm = () => {
   const [chargeValue, setChargeValue] = useState(0);
@@ -18,28 +19,33 @@ const ChargeForm = () => {
 
   return (
     <ChargeFormContainer>
-      <div className="dark-form-text">O que cobrar?</div>
+      <FormBlock title="O que cobrar?">
+        <CustomInput setValue={setChargeValue} />
 
-      <CustomInput setValue={setChargeValue} />
-      <CostumTextArea
-        placeholder="A descrição informada será impressa na fatura."
-        value={description}
-        setValue={setDescription}
-      />
+        <CostumTextArea
+          placeholder="A descrição informada será impressa na fatura."
+          value={description}
+          setValue={setDescription}
+        />
+      </FormBlock>
 
-      <div className="dark-form-text">Qual será a forma de pagamento?</div>
+      <FormBlock title="Qual será a forma de pagamento?">
+        <CustomSwitch
+          value={isSignatureSelected}
+          setValue={setIsSignatureSelected}
+        />
 
-      <CustomSwitch
-        value={isSignatureSelected}
-        setValue={setIsSignatureSelected}
-      />
-
-      <div className="payment-info-text">
-        O valor será cobrado apenas uma vez, podendo ser parcelado conforme
-        definido abaixo.
-      </div>
+        <div className="payment-info-text">
+          O valor será cobrado apenas uma vez, podendo ser parcelado conforme
+          definido abaixo.
+        </div>
+      </FormBlock>
 
       {isSignatureSelected ? <SignatureOption /> : <InCashOption />}
+
+      <FormBlock title="Qual será a forma de pagamento?">
+
+      </FormBlock>
     </ChargeFormContainer>
   );
 };

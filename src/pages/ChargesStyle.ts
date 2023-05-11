@@ -7,7 +7,7 @@ export const ChargeContainer = styled.div`
   flex-direction: column;
 
   .stepper-container {
-    padding: 1rem 4rem 1.5rem 1rem;
+    padding: 1rem 4rem 0.5rem 1rem;
   }
 `;
 
