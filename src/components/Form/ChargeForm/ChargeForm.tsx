@@ -36,10 +36,8 @@ const ChargeForm = () => {
         </div>
       </FormBlock>
 
-      {/* TODO: Terminar aplicação dos context para os selects */}
       {isSignatureSelected ? <SignatureOption /> : <InCashOption />}
 
-      {/* TODO: Aplicar context para as opções de pagamentos */}
       {/* TODO: Criar context para as opções adicionais */}
       <FormBlock title="Qual será a forma de pagamento?">
         <PaymentMethods />

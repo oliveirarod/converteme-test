@@ -5,12 +5,13 @@ import {
   Action,
   ChargeForm,
   InCashOrInstallment,
+  PaymentMethod,
   Signature,
 } from "../models/ChargeForm";
 
 interface ChargeFormContextProps {
   children: React.ReactNode;
-};
+}
 
 const defaultChargeFormValues: ChargeForm = {
   chargeValue: 0,
@@ -25,19 +26,14 @@ const defaultChargeFormValues: ChargeForm = {
     endOfSignature: null,
   },
   setSignature: (value: Signature) => undefined,
-  paymentMethods: [],
-  setPaymentMethods: (value: string[]) => undefined,
+  paymentMethods: { bankSlip: true, pix: true, creditCard: true },
+  setPaymentMethods: (value: PaymentMethod) => undefined,
   dispatch: () => undefined,
 };
 
-const ChargeFormContext = createContext<ChargeForm>(
-  defaultChargeFormValues
-);
+const ChargeFormContext = createContext<ChargeForm>(defaultChargeFormValues);
 
-const chargeFormReducer = (
-  state: ChargeForm,
-  action: Action
-): ChargeForm => {
+const chargeFormReducer = (state: ChargeForm, action: Action): ChargeForm => {
   switch (action.type) {
     case "SET_CHARGE_VALUE":
       return { ...state, chargeValue: action.payload };
@@ -59,6 +55,8 @@ export const ChargeFormProvider = ({ children }: ChargeFormContextProps) => {
     chargeFormReducer,
     defaultChargeFormValues
   );
+
+  console.log(formControls.paymentMethods);
 
   return (
     <ChargeFormContext.Provider value={{ ...formControls, dispatch }}>

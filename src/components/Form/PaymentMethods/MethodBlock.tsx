@@ -1,5 +1,6 @@
 // Hooks
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useChargeForm } from "../../../context/ChargeFormContext";
 
 // Styles
 import { CollapsibleBlock } from "./MethodBlockStyle";
@@ -10,33 +11,54 @@ interface MethodBlockProps {
   name: string;
   value: string;
   details: string[];
-};
+  paymentMethod: string;
+}
 
-const MethodBlock = ({ name, value, details }: MethodBlockProps) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [isSelected, setIsSelected] = useState(true);
+const MethodBlock = ({
+  name,
+  value,
+  details,
+  paymentMethod,
+}: MethodBlockProps) => {
+  const [method, setMethod] = useState({
+    name: "",
+    isOpen: false,
+    isSelected: true,
+  });
+
+  const { dispatch, paymentMethods } = useChargeForm();
 
   const toggleOpen = (event: React.MouseEvent) => {
-		event.stopPropagation();
-    setIsOpen(!isOpen);
+    event.stopPropagation();
+    setMethod({ ...method, isOpen: !method.isOpen });
   };
 
   const toggleSelect = () => {
-    setIsSelected(!isSelected);
+    setMethod({ ...method, isSelected: !method.isSelected });
   };
+
+  useEffect(() => {
+    dispatch({
+      type: "SET_PAYMENT_METHODS",
+      payload: {
+        ...paymentMethods,
+        [paymentMethod]: method.isSelected,
+      },
+    });
+  }, [method.isSelected]);
 
   return (
     <CollapsibleBlock onClick={toggleSelect}>
       <div className="collapsible-block-header">
         <div className="method-name flex-center">
-          <div className={`circle ${isSelected && 'selected'}`}></div>
+          <div className={`circle ${method.isSelected && "selected"}`}></div>
           <span>{name}</span>
         </div>
 
         <div className="method-value">
           <span className="text">Valor líquido por parcela: R$ {value}</span>
 
-          {isOpen ? (
+          {method.isOpen ? (
             <FontAwesomeIcon icon={faAngleUp} onClick={toggleOpen} />
           ) : (
             <FontAwesomeIcon icon={faAngleDown} onClick={toggleOpen} />
@@ -44,7 +66,7 @@ const MethodBlock = ({ name, value, details }: MethodBlockProps) => {
         </div>
       </div>
 
-      {isOpen && (
+      {method.isOpen && (
         <div className="collapsible-block-content" onClick={toggleOpen}>
           {details.map((detail, index) => {
             return <p key={index}>{detail}</p>;
