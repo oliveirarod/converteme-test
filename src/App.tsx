@@ -1,5 +1,8 @@
 import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 
+// Hooks
+import { useEffect, useState } from "react";
+
 // Styles
 import "./App.css";
 import GlobalStyles from "./GlobalStyles";
@@ -14,6 +17,17 @@ import Sidebar from "./components/Sidebar/Sidebar";
 import Charges from "./pages/Charges";
 
 function App() {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(window.innerWidth > 1275);
+
+  // Control sidebar
+  useEffect(() => {
+    const handleResize = () => setIsSidebarOpen(window.innerWidth > 1275);
+
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <>
       <GlobalStyles />
@@ -21,8 +35,11 @@ function App() {
       <BrowserRouter>
         <Navbar />
 
-        <div className="page-content">
-          <Sidebar />
+        <div
+          className="page-content"
+          style={{ marginLeft: isSidebarOpen ? "" : "4rem" }}
+        >
+          <Sidebar isOpen={isSidebarOpen} setIsOpen={setIsSidebarOpen} />
 
           <AdditionalOptionsContextProvider>
             <StepperContextProvider>

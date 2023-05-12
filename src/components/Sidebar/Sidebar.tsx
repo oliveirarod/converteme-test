@@ -17,7 +17,7 @@ import clientsIcon from "../../assets/icons/clients-icon.svg";
 import settingsIcon from "../../assets/icons/settings-icon.svg";
 import personIcon from "../../assets/icons/person-icon.svg";
 import helpIcon from "../../assets/icons/help-icon.svg";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const menus: Menu[] = [
   { name: "Dashboard", icon: dashboardIcon, hasSubItems: false },
@@ -32,7 +32,12 @@ const menus: Menu[] = [
   { name: "Ajuda", icon: helpIcon, hasSubItems: false },
 ];
 
-const Sidebar = () => {
+interface SidebarProps {
+  isOpen: boolean;
+  setIsOpen: (value: boolean) => void;
+}
+
+const Sidebar = ({ isOpen, setIsOpen }: SidebarProps) => {
   const [selectedMenu, setSelectedMenu] = useState("Cobrança");
 
   const getMenuIcon = (menu: Menu): JSX.Element => {
@@ -43,8 +48,8 @@ const Sidebar = () => {
   };
 
   return (
-    <Container>
-      <div className="menu">
+    <Container className={isOpen ? "open" : ""}>
+      <div className="menu" onClick={() => setIsOpen(!isOpen)}>
         <img src={menuIcon} alt="Menu" />
       </div>
 
@@ -59,13 +64,15 @@ const Sidebar = () => {
           >
             {icon}
 
-            <div className="flex-center">
-              <span className="name">{menu.name}</span>
+            {isOpen && (
+              <div className="flex-center">
+                <span className="name">{menu.name}</span>
 
-              {menu.hasSubItems && (
-                <FontAwesomeIcon icon={faAngleRight} className="sub-items" />
-              )}
-            </div>
+                {menu.hasSubItems && (
+                  <FontAwesomeIcon icon={faAngleRight} className="sub-items" />
+                )}
+              </div>
+            )}
           </div>
         );
       })}

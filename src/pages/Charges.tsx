@@ -12,9 +12,6 @@ import Stepper from "../components/Stepper/Stepper";
 import ChargesOptions from "../components/ChargesOptions/ChargesOptions";
 import StepperControls from "../components/Stepper/StepperControls";
 
-// Models
-import { Step } from "../models/Step";
-
 // Styles
 import { Container, OutOfScopeMessage } from "./ChargesStyle";
 import { useEffect, useState } from "react";

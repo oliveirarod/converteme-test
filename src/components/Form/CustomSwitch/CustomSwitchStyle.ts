@@ -6,6 +6,14 @@ export const Container = styled.div`
 	border: 1px solid var(--grey-color);
 	border-radius: 0.5rem;
 
+  @media (max-width: 800px) {
+    width: 75%;
+  }
+
+  @media (max-width: 665px) {
+    width: 100%;
+  }
+
   div {
     background: var(--white);
     color: var(--primary-color);
@@ -14,6 +22,7 @@ export const Container = styled.div`
     padding: 0.5rem;
     width: 100%;
 		transition: var(--default-transition);
+    text-align: center;
     cursor: pointer;
 
     &.active {

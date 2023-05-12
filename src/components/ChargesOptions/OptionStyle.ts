@@ -17,6 +17,7 @@ export const Container = styled.div`
     .switch {
       display: inline-block;
       width: 2.125rem;
+      min-width: 2.125rem;
       height: 1.1rem;
       background: var(--white);
 			border: 1px solid var(--pink-color);

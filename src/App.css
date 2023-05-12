@@ -3,5 +3,9 @@
   margin-top: var(--navbar-height);
   margin-left: var(--sidebar-width);
   display: flex;
-  background: #EEEEEE;
+  background: #eeeeee;
+
+  @media (max-width: 1275px) {
+    margin-left: 4rem;
+  }
 }

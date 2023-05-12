@@ -26,10 +26,10 @@ export const Container = styled.div`
     .input-field {
       height: 1.875rem;
       border-radius: 0 0.5rem 0.5rem 0;
-			border: 1px solid var(--light-grey-color);
-			border-left: none;
-			padding-left: 0.5rem;
-			color: var(--grey-color);
+      border: 1px solid var(--light-grey-color);
+      border-left: none;
+      padding-left: 0.5rem;
+      color: var(--grey-color);
       width: calc(25% - 2.125rem);
       min-width: calc(200px - 2.125rem);
       transition: var(--default-transition);
@@ -37,6 +37,14 @@ export const Container = styled.div`
       &:focus {
         outline: none;
         border-color: var(--primary-color);
+      }
+
+      @media (max-width: 850px) {
+        width: calc(50% - 2.75rem);
+      }
+
+      @media (max-width: 850px) {
+        width: calc(75% - 3.25rem);
       }
     }
   }

@@ -4,6 +4,11 @@ export const Container = styled.div`
   box-shadow: 0 3px 6px #00000029;
   border-radius: 0.5rem;
   padding: 0.75rem;
+  min-width: 260px;
+
+  @media (max-width: 800px) {
+    display: none;
+  }
 
   .card-title {
     color: var(--grey-color);

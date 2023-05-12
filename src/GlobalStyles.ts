@@ -43,6 +43,10 @@ const GlobalStyles = createGlobalStyle`
     &:focus {
       outline: none;
     }
+
+		@media (max-width: 1275px) {
+			height: 38px;
+		}
   }
 
 	.primary-button {
