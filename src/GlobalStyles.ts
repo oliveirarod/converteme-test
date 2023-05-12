@@ -3,6 +3,8 @@ import { createGlobalStyle } from "styled-components";
 const GlobalStyles = createGlobalStyle`
 	:root {
 		--primary-color: #004BFF;
+		--green-color: #00CDA8;
+		--pink-color: #EA5462;
 		--grey-color: #696969;
 		--light-grey-color: #B4B4B4;
 		--white: #FFFFFF;
@@ -42,6 +44,23 @@ const GlobalStyles = createGlobalStyle`
       outline: none;
     }
   }
+
+	.primary-button {
+		border: none;
+		border-radius: 1.5rem;
+		background: var(--primary-color);
+		padding: 0.5rem 1.5rem;
+		color: var(--white);
+		font-size: 0.875rem;
+		font-weight: bold;
+		text-transform: uppercase;
+		cursor: pointer;
+
+		&[disabled] {
+			pointer-events: none;
+			opacity: 0.5;
+		}
+	}
 `;
 
 export default GlobalStyles;

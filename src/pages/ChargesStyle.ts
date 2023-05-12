@@ -10,6 +10,17 @@ export const Container = styled.div`
   .stepper-container {
     padding: 1rem 4rem 0.5rem 1rem;
   }
+
+  .form-container {
+    position: relative;
+
+    .aditional-options {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 35%;
+    }
+  }
 `;
 
 export const OutOfScopeMessage = styled.div`
