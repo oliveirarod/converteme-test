@@ -1,16 +1,16 @@
+// Contexts
+import { useChargeForm } from "../../../context/ChargeFormContext";
+
+// Styles
 import { Container } from "./CustomTextAreaStyle";
 
-type CostumTextAreaProps = {
-  value: string;
+interface CostumTextAreaProps {
   placeholder: string;
-  setValue: (value: string) => void;
-};
+}
 
-const CostumTextArea = ({
-  value,
-  placeholder,
-  setValue,
-}: CostumTextAreaProps) => {
+const CostumTextArea = ({ placeholder }: CostumTextAreaProps) => {
+  const { dispatch, chargeDesc } = useChargeForm();
+
   return (
     <Container>
       <label htmlFor="chargeDesc">
@@ -23,8 +23,13 @@ const CostumTextArea = ({
         placeholder={placeholder}
         className="textarea-field"
         style={{ resize: "none" }}
-        value={value}
-        onChange={(e) => setValue(e.target.value)}
+        value={chargeDesc}
+        onChange={(e) =>
+          dispatch({
+            type: "SET_CHARGE_DESC",
+            payload: e.target.value,
+          })
+        }
         rows={6}
       />
     </Container>

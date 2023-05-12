@@ -1,8 +1,9 @@
 // Hooks
 import { useState } from "react";
+import { useChargeForm } from "../../../context/ChargeFormContext";
 
 // Components
-import CustomInput from "../CustomInput/CustomInput";
+import CustomDateInput from "../CustomDateInput/CustomDateInput";
 import CustomSelect from "../CustomSelect/CustomSelect";
 
 // Models
@@ -16,6 +17,8 @@ const InCashOption = () => {
 
   const [installment, setInstallment] = useState(defaultInstallment);
   const [chargeDate, setChargeDate] = useState(new Date());
+
+  const { inCashOrInstallment } = useChargeForm();
 
   const installmentOptions: SelectOption[] = [
     defaultInstallment,
@@ -34,10 +37,11 @@ const InCashOption = () => {
         options={installmentOptions}
       />
 
-      <CustomInput
+      <CustomDateInput
         label="Vencimento da cobrança"
-        value={chargeDate}
-        setValue={setChargeDate}
+        paymentOptionType="SET_IN_CASH_OR_INSTALLMENT"
+        paymentOption={inCashOrInstallment}
+        changedValue="chargeDueDate"
       />
     </Container>
   );

@@ -7,7 +7,7 @@ import { Step } from "../../models/Step";
 // Contexts
 import { useStepperContext } from "../../context/StepperContext";
 
-type Props = {
+interface Props {
   steps: Step[];
 };
 

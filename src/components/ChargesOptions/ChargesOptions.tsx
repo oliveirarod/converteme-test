@@ -4,10 +4,10 @@ import { Container } from "./ChargesOptionsStyle";
 // Components
 import Option from "./Option";
 
-type Option = {
+interface Option {
   title: string;
   desc: string;
-};
+}
 
 const ChargesOptions = () => {
   const options: Option[] = [
@@ -26,8 +26,8 @@ const ChargesOptions = () => {
       <div className="card-title">Opções adicionais</div>
 
       <div className="card-content">
-        {options.map(({ title, desc }) => {
-          return <Option title={title} desc={desc} />;
+        {options.map(({ title, desc }, index) => {
+          return <Option title={title} desc={desc} key={index} />;
         })}
       </div>
     </Container>

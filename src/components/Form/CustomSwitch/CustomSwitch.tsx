@@ -1,6 +1,6 @@
 import { Container } from "./CustomSwitchStyle";
 
-type CustomSwitchProps = {
+interface CustomSwitchProps {
   value: boolean;
   setValue: (value: boolean) => void;
 };

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Container } from "./OptionStyle";
 
-type OptionProps = {
+interface OptionProps {
   title: string;
   desc: string;
 };

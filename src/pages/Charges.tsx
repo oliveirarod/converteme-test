@@ -1,5 +1,6 @@
 // Contexts
 import { useStepperContext } from "../context/StepperContext";
+import { ChargeFormProvider } from "../context/ChargeFormContext";
 
 // Components
 import ChargeForm from "../components/Form/ChargeForm/ChargeForm";
@@ -36,19 +37,21 @@ const Charges = () => {
   return (
     <Container>
       <PageContent pageName="Cobrança">
-        <div className="stepper-container">
-          <Stepper steps={steps} />
-        </div>
-
-        <div className="form-container">
-          {handleStepContent()}
-
-          <div className="aditional-options">
-            <ChargesOptions />
+        <ChargeFormProvider>
+          <div className="stepper-container">
+            <Stepper steps={steps} />
           </div>
-        </div>
 
-        <StepperControls stepperLength={steps.length} />
+          <div className="form-container">
+            {handleStepContent()}
+
+            <div className="aditional-options">
+              <ChargesOptions />
+            </div>
+          </div>
+
+          <StepperControls stepperLength={steps.length} />
+        </ChargeFormProvider>
       </PageContent>
     </Container>
   );

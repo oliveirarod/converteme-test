@@ -6,7 +6,7 @@ import { CollapsibleBlock } from "./MethodBlockStyle";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown, faAngleUp } from "@fortawesome/free-solid-svg-icons";
 
-type MethodBlockProps = {
+interface MethodBlockProps {
   name: string;
   value: string;
   details: string[];

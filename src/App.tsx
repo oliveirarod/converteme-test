@@ -1,3 +1,5 @@
+import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
+
 // Styles
 import "./App.css";
 import GlobalStyles from "./GlobalStyles";
@@ -14,15 +16,21 @@ function App() {
   return (
     <>
       <GlobalStyles />
-      <Navbar />
 
-      <div className="page-content">
-        <Sidebar />
+      <BrowserRouter>
+        <Navbar />
 
-        <StepperContextProvider>
-          <Charges />
-        </StepperContextProvider>
-      </div>
+        <div className="page-content">
+          <Sidebar />
+
+          <StepperContextProvider>
+            <Routes>
+              <Route path="/cobranca" element={<Charges />} />
+              <Route path="/" element={<Navigate to="/cobranca" />} />
+            </Routes>
+          </StepperContextProvider>
+        </div>
+      </BrowserRouter>
     </>
   );
 }

@@ -1,11 +1,10 @@
+import { useChargeForm } from "../../../context/ChargeFormContext";
 import { Container } from "./PrefixInputStyle";
 import { NumericFormat } from "react-number-format";
 
-type PrefixInputProps = {
-  setValue: (value: number) => void;
-};
+const PrefixInput = () => {
+  const { dispatch } = useChargeForm();
 
-const PrefixInput = ({ setValue }: PrefixInputProps) => {
   return (
     <Container>
       <span className="input-label">Valor da cobrança</span>
@@ -24,7 +23,10 @@ const PrefixInput = ({ setValue }: PrefixInputProps) => {
           required
           className="input-field"
           onValueChange={(values) => {
-            setValue(values.floatValue || 0);
+            dispatch({
+              type: "SET_CHARGE_VALUE",
+              payload: values.floatValue || 0,
+            });
           }}
         />
       </div>

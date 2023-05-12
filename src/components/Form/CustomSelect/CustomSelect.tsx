@@ -6,12 +6,12 @@ import { Container } from "./CustomSelectStyle";
 
 import Select from "react-select";
 
-type LabelType = {
+interface LabelType {
   text: string;
   optional?: boolean;
 };
 
-type SelectProps = {
+interface SelectProps {
   options: SelectOption[];
   value: SelectOption;
   label: LabelType;

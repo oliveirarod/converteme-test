@@ -1,8 +1,9 @@
 // Hooks
 import { useState } from "react";
+import { useChargeForm } from "../../../context/ChargeFormContext";
 
 // Components
-import CustomInput from "../CustomInput/CustomInput";
+import CustomDateInput from "../CustomDateInput/CustomDateInput";
 import CustomSelect from "../CustomSelect/CustomSelect";
 
 // Styles
@@ -20,6 +21,8 @@ const SignatureOption = () => {
   );
   const [endOfSubs, setEndOfSubs] = useState(endOfSubsNotSelected);
   const [firstCharge, setFirstCharge] = useState(new Date());
+
+  const { signature } = useChargeForm();
 
   const chargeFrequencyOptions: SelectOption[] = [
     defaultChargeFrequency,
@@ -44,10 +47,11 @@ const SignatureOption = () => {
         options={chargeFrequencyOptions}
       />
 
-      <CustomInput
+      <CustomDateInput
         label="Vencimento da 1° cobrança"
-        value={firstCharge}
-        setValue={setFirstCharge}
+        paymentOptionType="SET_SIGNATURE"
+        paymentOption={signature}
+        changedValue="firstChargeDueDate"
       />
 
       <CustomSelect

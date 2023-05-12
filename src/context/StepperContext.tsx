@@ -1,10 +1,10 @@
 import { createContext, useContext, useState } from "react";
 
-type StepperProviderProps = {
+interface StepperProviderProps {
   children: React.ReactNode;
 };
 
-type StepperContextType = {
+interface StepperContextType {
   currentStep: number;
   setCurrentStep: (value: number) => void;
 };

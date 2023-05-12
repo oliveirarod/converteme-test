@@ -5,7 +5,7 @@ import { useState } from "react";
 import { Container } from "./ChargeFormStyle";
 
 // Components
-import CustomInput from "../PrefixInput/PrefixInput";
+import ChargeValueInput from "../PrefixInput/PrefixInput";
 import CostumTextArea from "../CustomTextArea/CostumTextArea";
 import CustomSwitch from "../CustomSwitch/CustomSwitch";
 import InCashOption from "../PaymentOptions/InCashOption";
@@ -14,20 +14,14 @@ import FormBlock from "./FormBlock";
 import PaymentMethods from "../PaymentMethods/PaymentMethods";
 
 const ChargeForm = () => {
-  const [chargeValue, setChargeValue] = useState(0);
-  const [description, setDescription] = useState("");
   const [isSignatureSelected, setIsSignatureSelected] = useState(false);
 
   return (
     <Container>
       <FormBlock title="O que cobrar?">
-        <CustomInput setValue={setChargeValue} />
+        <ChargeValueInput />
 
-        <CostumTextArea
-          placeholder="A descrição informada será impressa na fatura."
-          value={description}
-          setValue={setDescription}
-        />
+        <CostumTextArea placeholder="A descrição informada será impressa na fatura." />
       </FormBlock>
 
       <FormBlock title="Qual será a forma de pagamento?">
@@ -42,8 +36,11 @@ const ChargeForm = () => {
         </div>
       </FormBlock>
 
+      {/* TODO: Terminar aplicação dos context para os selects */}
       {isSignatureSelected ? <SignatureOption /> : <InCashOption />}
 
+      {/* TODO: Aplicar context para as opções de pagamentos */}
+      {/* TODO: Criar context para as opções adicionais */}
       <FormBlock title="Qual será a forma de pagamento?">
         <PaymentMethods />
       </FormBlock>
