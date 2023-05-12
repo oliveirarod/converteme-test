@@ -1,3 +1,6 @@
+// Hooks
+import { useChargeForm } from "../../../context/ChargeFormContext";
+
 // Models
 import { SelectOption } from "../../../models/SelectOption";
 
@@ -13,9 +16,10 @@ interface LabelType {
 
 interface SelectProps {
   options: SelectOption[];
-  value: SelectOption;
   label: LabelType;
-  setValue: (value: SelectOption) => void;
+  paymentOptionType: any;
+  paymentOption: any;
+  changedValue: string
 };
 
 const CustomSelectStyles = {
@@ -44,10 +48,19 @@ const CustomSelectStyles = {
   }),
 };
 
-const CustomSelect = ({ options, value, label, setValue }: SelectProps) => {
-  const handleChange = (newValue: any, actionMeta: any) => {
+const CustomSelect = ({ options, label, paymentOptionType, paymentOption, changedValue }: SelectProps) => {
+  const { dispatch } = useChargeForm();
+
+  const handleChange = (newValue: any) => {
     const selectedOption = newValue as SelectOption;
-    setValue(selectedOption);
+
+    dispatch({
+      type: paymentOptionType,
+      payload: {
+        ...paymentOption,
+        [changedValue]: selectedOption,
+      },
+    });
   };
 
   return (
@@ -59,7 +72,7 @@ const CustomSelect = ({ options, value, label, setValue }: SelectProps) => {
 
       <Select
         options={options}
-        value={value}
+        value={paymentOption[changedValue] || options[0]}
         styles={CustomSelectStyles}
         onChange={handleChange}
       />

@@ -55,13 +55,13 @@ const chargeFormReducer = (
 };
 
 export const ChargeFormProvider = ({ children }: ChargeFormContextProps) => {
-  const [state, dispatch] = useReducer(
+  const [formControls, dispatch] = useReducer(
     chargeFormReducer,
     defaultChargeFormValues
   );
 
   return (
-    <ChargeFormContext.Provider value={{ ...state, dispatch }}>
+    <ChargeFormContext.Provider value={{ ...formControls, dispatch }}>
       {children}
     </ChargeFormContext.Provider>
   );

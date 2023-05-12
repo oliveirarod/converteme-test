@@ -1,5 +1,4 @@
 // Hooks
-import { useState } from "react";
 import { useChargeForm } from "../../../context/ChargeFormContext";
 
 // Components
@@ -13,26 +12,17 @@ import { Container } from "./SignatureOptionStyle";
 import { SelectOption } from "../../../models/SelectOption";
 
 const SignatureOption = () => {
-  const defaultChargeFrequency = { label: "Semanal", value: "weekly" };
-  const endOfSubsNotSelected = { label: "Sem data definida", value: "0" };
-
-  const [chargeFrequency, setChargeFrequency] = useState(
-    defaultChargeFrequency
-  );
-  const [endOfSubs, setEndOfSubs] = useState(endOfSubsNotSelected);
-  const [firstCharge, setFirstCharge] = useState(new Date());
-
   const { signature } = useChargeForm();
 
   const chargeFrequencyOptions: SelectOption[] = [
-    defaultChargeFrequency,
+    { label: "Semanal", value: "weekly" },
     { label: "Mensal", value: "monthly" },
     { label: "Semestral", value: "semester" },
     { label: "Anual", value: "yearly" },
   ];
 
   const endOfSubsOptions: SelectOption[] = [
-    endOfSubsNotSelected,
+    { label: "Sem data definida", value: "0" },
     { label: "1 ano", value: "1" },
     { label: "2 anos", value: "2" },
     { label: "3 anos", value: "3" },
@@ -42,9 +32,10 @@ const SignatureOption = () => {
     <Container>
       <CustomSelect
         label={{ text: "Frequência da cobrança" }}
-        value={chargeFrequency}
-        setValue={setChargeFrequency}
         options={chargeFrequencyOptions}
+        paymentOptionType="SET_SIGNATURE"
+        paymentOption={signature}
+        changedValue="chargeFrequency"
       />
 
       <CustomDateInput
@@ -56,9 +47,10 @@ const SignatureOption = () => {
 
       <CustomSelect
         label={{ text: "Fim da assinatura", optional: true }}
-        value={endOfSubs}
-        setValue={setEndOfSubs}
         options={endOfSubsOptions}
+        paymentOptionType="SET_SIGNATURE"
+        paymentOption={signature}
+        changedValue="endOfSignature"
       />
     </Container>
   );
