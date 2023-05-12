@@ -6,6 +6,7 @@ import GlobalStyles from "./GlobalStyles";
 
 // Contexts
 import { StepperContextProvider } from "./context/StepperContext";
+import { AdditionalOptionsContextProvider } from "./context/AdditionalOptions";
 
 // Components
 import Navbar from "./components/Navbar/Navbar";
@@ -23,12 +24,14 @@ function App() {
         <div className="page-content">
           <Sidebar />
 
-          <StepperContextProvider>
-            <Routes>
-              <Route path="/cobranca" element={<Charges />} />
-              <Route path="/" element={<Navigate to="/cobranca" />} />
-            </Routes>
-          </StepperContextProvider>
+          <AdditionalOptionsContextProvider>
+            <StepperContextProvider>
+              <Routes>
+                <Route path="/cobranca" element={<Charges />} />
+                <Route path="/" element={<Navigate to="/cobranca" />} />
+              </Routes>
+            </StepperContextProvider>
+          </AdditionalOptionsContextProvider>
         </div>
       </BrowserRouter>
     </>

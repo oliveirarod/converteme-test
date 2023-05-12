@@ -38,7 +38,6 @@ const ChargeForm = () => {
 
       {isSignatureSelected ? <SignatureOption /> : <InCashOption />}
 
-      {/* TODO: Criar context para as opções adicionais */}
       <FormBlock title="Qual será a forma de pagamento?">
         <PaymentMethods />
       </FormBlock>

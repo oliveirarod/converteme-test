@@ -56,8 +56,6 @@ export const ChargeFormProvider = ({ children }: ChargeFormContextProps) => {
     defaultChargeFormValues
   );
 
-  console.log(formControls.paymentMethods);
-
   return (
     <ChargeFormContext.Provider value={{ ...formControls, dispatch }}>
       {children}

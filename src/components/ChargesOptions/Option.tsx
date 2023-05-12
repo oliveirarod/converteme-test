@@ -1,16 +1,21 @@
+// Hooks
 import { useState } from "react";
+
+// Styles
 import { Container } from "./OptionStyle";
 
 interface OptionProps {
   title: string;
   desc: string;
-};
+  contextAttr: (value: boolean) => void
+}
 
-const Option = ({ title, desc }: OptionProps) => {
+const Option = ({ title, desc, contextAttr }: OptionProps) => {
   const [isChecked, setIsChecked] = useState(false);
 
   const toggleSwitch = () => {
     setIsChecked(!isChecked);
+    contextAttr(!isChecked);
   };
 
   return (

@@ -1,3 +1,6 @@
+// Hooks
+import { useAdditionalOptionsContext } from "../../../context/AdditionalOptions";
+
 // Components
 import MethodBlock from "./MethodBlock";
 
@@ -10,6 +13,8 @@ const mockedDetails: string[] = [
 ];
 
 const PaymentMethods = () => {
+  const { documents } = useAdditionalOptionsContext();
+
   return (
     <Container>
       <MethodBlock
@@ -19,12 +24,14 @@ const PaymentMethods = () => {
         paymentMethod={"bankSlip"}
       />
 
-      <MethodBlock
-        name="Pix"
-        value="148,01"
-        details={mockedDetails}
-        paymentMethod={"pix"}
-      />
+      {!documents && (
+        <MethodBlock
+          name="Pix"
+          value="148,01"
+          details={mockedDetails}
+          paymentMethod={"pix"}
+        />
+      )}
 
       <MethodBlock
         name="Cartão de Crédito"
